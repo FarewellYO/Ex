@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="jquery.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="click" id="xmn">
+<div id="yuan"></div>
+<script>
+    var button=window.document.getElementById('xmn');
+    button.onclick=function () {
+        $.ajax({
+            async:false,
+            type:"get",
+            dataType:"text",
+            url:"text.text",
+            success:function(data){
+                var html1;
+                html1=data;
+                $('yuan').html(html1);
+
+            }
+        })
+    }
+</script>
+</body>
+</html>
